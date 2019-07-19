@@ -175,11 +175,21 @@ public class HelloController {
         return 0;
     }
 
-    @ApiOperation(value = "帮帮送订单 参数：" +
+    @ApiOperation(value = "帮帮取订单 参数：" +
             "开始地址，结束地址，路程，时间，时间设置，规格" +
             "返回值 int 金额")
     @RequestMapping("/helpGet")
     public int helpGet(Order order){
+
+        return 0;
+    }
+
+
+    @ApiOperation(value = "帮帮排队订单 参数：" +
+            "排队类型，叙述，位置，目的，时长" +
+            "返回值 int 金额")
+    @RequestMapping("/helLineup")
+    public int  helLineup(Order order){
 
         return 0;
     }

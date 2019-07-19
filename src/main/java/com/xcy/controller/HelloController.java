@@ -169,7 +169,7 @@ public class HelloController {
     @ApiOperation(value = "帮帮送订单 参数：" +
             "开始地址，结束地址，路程，时间，时间设置，规格" +
             "返回值 int 金额")
-    @RequestMapping("/helpBuy")
+    @RequestMapping("/helpGive")
     public int helpGive(Order order){
 
         return 0;

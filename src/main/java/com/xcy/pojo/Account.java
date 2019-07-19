@@ -1,7 +1,10 @@
 package com.xcy.pojo;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+
+@ApiModel("账户信息")
 public class Account {
 
     @ApiModelProperty(value ="id")

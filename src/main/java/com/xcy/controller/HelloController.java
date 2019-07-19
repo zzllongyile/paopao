@@ -39,7 +39,7 @@ public class HelloController {
         return "hello1";
     }
 
-    @ApiOperation(value = "查询用户信息 返回值：json字符串")
+    @ApiOperation(value = "查询用户信息 参数：用户账号 返回值：json字符串")
     @RequestMapping("/selectUserMsg")
     public String selectUserMsg( Account account){
 
@@ -48,7 +48,7 @@ public class HelloController {
     }
 
 
-    @ApiOperation(value = "查询用户等级 返回值：int")
+    @ApiOperation(value = "查询用户等级 参数：用户账号 返回值：int")
     @RequestMapping("/selectUserLevel")
     public String selectUserLevel(Account account){
 
@@ -56,7 +56,7 @@ public class HelloController {
         return "hello1";
     }
 
-    @ApiOperation(value = "账户充值  返回值：int")
+    @ApiOperation(value = "账户充值  参数：用户账号 返回值：int")
     @RequestMapping("/updateAccountMoney")
     public String updateAccountMoney(Account account,@ApiParam("充值金额")int money){
 

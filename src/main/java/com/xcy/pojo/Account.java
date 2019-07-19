@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel("账户信息")
 public class Account {
 
-    @ApiModelProperty(value ="id")
+    @ApiModelProperty(value ="id",required=true)
     private int id;
 
     @ApiModelProperty(value ="用户余额")

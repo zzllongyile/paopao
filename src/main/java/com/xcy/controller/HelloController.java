@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sun.security.krb5.internal.Ticket;
@@ -41,7 +42,7 @@ public class HelloController {
 
     @ApiOperation(value = "查询用户信息 参数：用户账号 返回值：json字符串")
     @RequestMapping("/selectUserMsg")
-    public String selectUserMsg( Account account){
+    public String selectUserMsg(@RequestBody Account account){
 
 
         return "hello1";

@@ -18,4 +18,10 @@ public interface AccountMapper {
 //    int insertCollectionAccount(int phoneNum, CollectionAccount collectionAccount);
 //    List<CollectionAccount> showCollectionAccount(int phoneNum);
 //    List<Ticket> selectAllCouponById(int phoneNum);
+import com.xcy.pojo.Account;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface AccountMapper {
+    Account findAll(int id);
 }

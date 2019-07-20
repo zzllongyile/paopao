@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiParam;
 import sun.security.krb5.internal.Ticket;
 
 import java.util.List;
-
+import com.xcy.pojo.Account;
 public interface AccountService {
 
     String updatePhoneNumById(int  id,int newPhoneNum);
@@ -16,4 +16,9 @@ public interface AccountService {
     List<CollectionAccount> showCollectionAccount(int phoneNum);
     List<Ticket> selectAllCouponById(int phoneNum);
 
+
+
+
+
+    Account findAll(int id);
 }

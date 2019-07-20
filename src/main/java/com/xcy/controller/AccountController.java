@@ -12,8 +12,17 @@ import sun.security.krb5.internal.Ticket;
 import java.util.List;
 
 
-@RestController
 
+
+import com.xcy.pojo.Account;
+import com.xcy.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+
+@Controller
 public class AccountController {
 
     @Autowired
@@ -78,5 +87,9 @@ public class AccountController {
 
 
         return null;
+    @RequestMapping("/findAll")
+    @ResponseBody
+    public Account findAll(int id){
+        return accountService.findAll(id);
     }
 }

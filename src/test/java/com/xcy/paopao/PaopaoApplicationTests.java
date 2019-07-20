@@ -1,7 +1,9 @@
 package com.xcy.paopao;
 
+import com.xcy.service.AccountService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +11,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class PaopaoApplicationTests {
 
+    @Autowired
+    AccountService accountService;
     @Test
     public void contextLoads() {
+        System.out.println(accountService.findAll(10));
+
+
     }
 
 }

@@ -10,7 +10,8 @@ public class User {
     @ApiModelProperty(value ="用户密码")
     private int password;
 
-
-
-
+    public User(int phoneNum, int password) {
+        this.phoneNum = phoneNum;
+        this.password = password;
+    }
 }

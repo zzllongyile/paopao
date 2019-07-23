@@ -1,23 +1,25 @@
-package com.xcy.controller;
-
-
-import com.xcy.pojo.*;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import sun.security.krb5.internal.Ticket;
-
-import java.util.List;
-
-//1、访问http://localhost:8080/swagger-ui.html
-//2、在方法名和字段上添加swagger文档中的信息
-//        1）在方法上添加   @ApiOperation(value=”该方法的作用”)
-//        2）在字段上添加   @ApiModelProperty(value =”该字段是干嘛用的”)
-//        3）添加在参数上   @ApiParam(“该参数是干嘛用的”)
-
-//@Controller
+//package com.xcy.controller;
+//
+//
+//import com.xcy.pojo.*;
+//import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.ApiParam;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RestController;
+//import sun.security.krb5.internal.Ticket;
+//
+//import java.util.List;
+//
+////1、访问http://localhost:8080/swagger-ui.html
+////2、在方法名和字段上添加swagger文档中的信息
+////        1）在方法上添加   @ApiOperation(value=”该方法的作用”)
+////        2）在字段上添加   @ApiModelProperty(value =”该字段是干嘛用的”)
+////        3）添加在参数上   @ApiParam(“该参数是干嘛用的”)
+//
+//
 //@RestController
 //public class HelloController {
 //

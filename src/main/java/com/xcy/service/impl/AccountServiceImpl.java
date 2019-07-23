@@ -16,7 +16,8 @@ import java.util.List;
 @Service
 public class AccountServiceImpl implements AccountService {
 
-    @Resource
+
+    @Autowired
     AccountMapper accountMapper;
 
 
@@ -35,8 +36,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public String showPhoneNumById(int id) {
 
+        String s = accountMapper.showPhoneNumById(id);
 
-        return null;
+
+        return s;
     }
 
     @Override
@@ -52,24 +55,40 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Boolean showPasswordById(int phoneNum) {
-        return null;
+    public String showPasswordById(int phoneNum) {
+
+        String String = accountMapper.showPasswordById(phoneNum);
+
+
+        return String;
     }
 
 
     @Override
     public Boolean insertCollectionAccount(int phoneNum, CollectionAccount collectionAccount) {
-        return null;
+
+        int i = accountMapper.insertCollectionAccount(phoneNum, collectionAccount);
+
+        if (i != 1){
+            return false;
+        }
+
+        return true;
     }
 
     @Override
     public List<CollectionAccount> showCollectionAccount(int phoneNum) {
-        return null;
+
+        List<CollectionAccount> collectionAccounts = accountMapper.showCollectionAccount(phoneNum);
+        return collectionAccounts;
     }
 
     @Override
     public List<Ticket> selectAllCouponById(int phoneNum) {
-        return null;
+
+        List<Ticket> tickets = accountMapper.selectAllCouponById(phoneNum);
+
+        return tickets;
 
     }
 

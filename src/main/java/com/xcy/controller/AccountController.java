@@ -33,6 +33,7 @@ public class AccountController {
 
     @ApiOperation(value = "修改手机号   返回值：true false")
     @RequestMapping("/updatePhoneNumById")
+    @ResponseBody
     public String updatePhoneNumById(@ApiParam("用户ID")int id,@ApiParam("新手机号")int newPhoneNum){
 
 
@@ -46,6 +47,7 @@ public class AccountController {
 
     @ApiOperation(value = "修改密码   返回值：true false")
     @RequestMapping("/updatePasswordById")
+    @ResponseBody
     public Boolean updatePasswordById(@ApiParam("用户ID")int id,@ApiParam("密码")int password){
 
         Boolean aBoolean = accountService.updatePasswordById(id, password);
@@ -57,23 +59,29 @@ public class AccountController {
 
     @ApiOperation(value = "新增代收货款账户   返回值：true false")
     @RequestMapping("/insertCollectionAccount")
+    @ResponseBody
     public Boolean insertCollectionAccount(@ApiParam("用户ID")int id, @ApiParam("新账户") CollectionAccount collectionAccount){
 
+        Boolean aBoolean = accountService.insertCollectionAccount(id, collectionAccount);
 
-        return  true;
+        return  aBoolean;
     }
 
 
     @ApiOperation(value = "展示代收货款账户   返回值：CollectionAccount(代收账户账户名，代收账户账户)")
     @RequestMapping("/showCollectionAccount")
-    public String showCollectionAccount(@ApiParam("用户ID")int id, CollectionAccount collectionAccount){
+    @ResponseBody
+    public List<CollectionAccount> showCollectionAccount(@ApiParam("用户ID")int id, CollectionAccount collectionAccount){
+
+        List<CollectionAccount> collectionAccounts = accountService.showCollectionAccount(id);
 
 
-        return "collectionAccount";
+        return collectionAccounts;
     }
 
     @ApiOperation(value = "退出账户  返回值  true false")
     @RequestMapping("/loginOut")
+    @ResponseBody
     public Boolean loginOut(@ApiParam("用户ID")int id){
 
 
@@ -83,10 +91,12 @@ public class AccountController {
 
     @ApiOperation(value = "展示用户优惠券  返回值 json字符串")
     @RequestMapping("/selectAllCouponById")
+    @ResponseBody
     public List<Ticket> selectAllCouponById(@ApiParam("用户ID")int id){
+        List<Ticket> tickets = accountService.selectAllCouponById(id);
 
-
-        return null;
+        return tickets;
+    }
     @RequestMapping("/findAll")
     @ResponseBody
     public Account findAll(int id){

@@ -11,14 +11,10 @@ public interface AccountService {
     String updatePhoneNumById(int  id,int newPhoneNum);
     String showPhoneNumById(int  phoneNum);
     Boolean updatePasswordById(int phoneNum,int password);
-    Boolean showPasswordById(int phoneNum);
+    String showPasswordById(int phoneNum);
     Boolean insertCollectionAccount(int phoneNum,CollectionAccount collectionAccount);
     List<CollectionAccount> showCollectionAccount(int phoneNum);
     List<Ticket> selectAllCouponById(int phoneNum);
-
-
-
-
 
     Account findAll(int id);
 }

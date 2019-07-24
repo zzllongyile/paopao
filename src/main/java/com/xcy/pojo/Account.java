@@ -28,5 +28,93 @@ public class Account {
     @ApiModelProperty(value ="用户等级")
     private String accountLevel;
 
+    public Account() {
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(String ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getRegisterAddress() {
+        return registerAddress;
+    }
+
+    public void setRegisterAddress(String registerAddress) {
+        this.registerAddress = registerAddress;
+    }
+
+    public String getAccountLevel() {
+        return accountLevel;
+    }
+
+    public void setAccountLevel(String accountLevel) {
+        this.accountLevel = accountLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", money=" + money +
+                ", userId=" + userId +
+                ", ticketId='" + ticketId + '\'' +
+                ", headImg='" + headImg + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", registerAddress='" + registerAddress + '\'' +
+                ", accountLevel='" + accountLevel + '\'' +
+                '}';
+    }
 }

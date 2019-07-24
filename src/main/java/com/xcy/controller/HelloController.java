@@ -25,7 +25,7 @@
 //
 //    @ApiOperation(value = "输出hello")
 //    @RequestMapping("/hello")
-//    public String hello(  @ApiParam("该参数没啥卵用") int a){
+//    public String hello(@ApiParam("该参数没啥卵用") int a){
 //
 //
 //        return "hello";

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcy.mapper.OrderMapper">
+    <insert id="submitHelpOrder" parameterType="helpOrder" >
+       insert into help_order(id,description,oid,time,size,requirement,money,otime) values (null,#{description},#{oid},#{time},#{size},#{requirement},#{money},#{otime})
+    </insert>
+    <insert id="submitOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
+       insert into orders(id,kind,description,money,status,aid,time) values (null,#{kind},#{description},#{money},#{status},#{aid},#{time})
+    </insert>
+    <update id="updateOrderStatus" parameterType="java.lang.Integer">
+        update order set status=2 where id=#{oid}
+    </update>
+    <select id="getPayMoney" parameterType="java.lang.Integer" resultType="int">
+        select money from orders where  id=#{id}
+    </select>
+    <select id="getAccountMoney" parameterType="java.lang.Integer" resultType="int">
+        select money from account where  id=#{id}
+    </select>
+    <insert id="submitHelpBuyOrder" parameterType="helpBuyOrder" >
+       insert into buy_order(id,description,aid,oid,buyTime,buyAddress,getAddress,tickId,money,otime) values (null,#{description},#{accountId},#{oid},#{buyTime},#{buyAddress},#{getAddress},#{tickId},#{money},#{otime})
+    </insert>
+    <insert id="submitHelpPutOrder" parameterType="helpPutOrder" >
+       insert into put_order(id,description,aid,oid,putTime,buyAddress,getAddress,upTime,money,otime) values (null,#{description},#{accountId},#{oid},#{putTime},#{buyAddress},#{getAddress},#{upTime},#{money},#{otime})
+    </insert>
+    <insert id="submitHelpGetOrder" parameterType="helpGetOrder" >
+       insert into get_order(id,description,aid,oid,putTime,buyAddress,getAddress,upTime,money,otime) values (null,#{description},#{accountId},#{oid},#{putTime},#{buyAddress},#{getAddress},#{upTime},#{money},#{otime})
+    </insert>
+    <insert id="submitHelLineOrder" parameterType="helpLineOrder" >
+       insert into line_order(id,description,aid,oid,address,aim,time,money,otime) values (null,#{description},#{accountId},#{oid},#{address},#{aim},#{time},#{money},#{otime})
+    </insert>
+</mapper>

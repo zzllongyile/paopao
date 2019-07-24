@@ -11,12 +11,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Controller
 public class OrderController {
 
-    @Autowired
+    @Resource
     OrderService orderService;
 
     @RequestMapping("/selectAllOrder")
@@ -54,14 +56,8 @@ public class OrderController {
         return orderList;
     }
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-@RequestMapping({"/order"})
-@Controller
-public class OrderController {
-    @Autowired
-    OrderService orderService;
+
     @ApiOperation(value = "帮帮忙订单确认下单 参数：" +"HelpOrder实体类"+
             "简介，时间，位置，需求，价格, 账户id"+
             "返回值 成功：总订单的id 失败：0")

@@ -1,17 +1,20 @@
 package com.xcy.service.impl;
 
-import com.xcy.mapper.OrderMapper;
-import com.xcy.pojo.Order;
-import com.xcy.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.xcy.mapper.OrderMapper;
+import com.xcy.pojo.*;
+import com.xcy.service.OrderService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 import java.util.List;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
 
-    @Autowired
+    @Resource
     OrderMapper orderMapper;
     @Override
     public List<Order> selectAllOrder(Order order) {
@@ -37,17 +40,7 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> selectPlaceOrder(Order order) {
         return orderMapper.selectPlaceOrder(order);
     }
-}
-import com.xcy.pojo.*;
-import com.xcy.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-@Service
-public class OrderServiceImpl implements OrderService {
-    @Autowired
-    OrderMapper orderMapper;
 
    //提供提交帮帮忙订单的服务，在方法中调用mapper层插入详细订单与总订单
 

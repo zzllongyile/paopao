@@ -24,6 +24,35 @@ public class HelpBuyOrder {
     @ApiModelProperty(value ="订单生成时间")
     private String otime;
 
+    public HelpBuyOrder(int id, String description, int accountId, int oid, String buyAddress, String getAddress, String buyTime, int tickId, int money, String otime) {
+        this.id = id;
+        this.description = description;
+        this.accountId = accountId;
+        this.oid = oid;
+        this.buyAddress = buyAddress;
+        this.getAddress = getAddress;
+        this.buyTime = buyTime;
+        this.tickId = tickId;
+        this.money = money;
+        this.otime = otime;
+    }
+
+    @Override
+    public String toString() {
+        return "HelpBuyOrder{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", accountId=" + accountId +
+                ", oid=" + oid +
+                ", buyAddress='" + buyAddress + '\'' +
+                ", getAddress='" + getAddress + '\'' +
+                ", buyTime='" + buyTime + '\'' +
+                ", tickId=" + tickId +
+                ", money=" + money +
+                ", otime='" + otime + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
@@ -46,6 +75,14 @@ public class HelpBuyOrder {
 
     public void setAccountId(int accountId) {
         this.accountId = accountId;
+    }
+
+    public int getOid() {
+        return oid;
+    }
+
+    public void setOid(int oid) {
+        this.oid = oid;
     }
 
     public String getBuyAddress() {
@@ -96,22 +133,6 @@ public class HelpBuyOrder {
         this.otime = otime;
     }
 
-    public int getOid() {
-        return oid;
-    }
-
-    public void setOid(int oid) {
-        this.oid = oid;
-    }
-
-    public Order getOrder(){
-        Order order = new Order();
-        order.setKind(1);
-        order.setDescription(this.description);
-        order.setMoney(this.money);
-        order.setStatus(1);
-        order.setTime(this.getOtime());
-        order.setAid(this.getAccountId());
-        return order;
+    public HelpBuyOrder() {
     }
 }

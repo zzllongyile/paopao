@@ -1,6 +1,6 @@
 package com.xcy.service;
 
-import com.xcy.pojo.Order;
+import com.xcy.pojo.*;
 
 import java.util.List;
 
@@ -16,9 +16,7 @@ public interface OrderService {
 
     List<Order> selectPlaceOrder(Order order);
 
-import com.xcy.pojo.*;
 
-public interface OrderService {
     int  submitHelpOrder(HelpOrder helpOrder);
 
     int payOrder(int oid, int aid);

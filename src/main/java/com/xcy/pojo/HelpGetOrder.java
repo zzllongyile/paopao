@@ -106,14 +106,34 @@ public class HelpGetOrder {
         this.otime = otime;
     }
 
-    public Order getOrder() {
-        Order order = new Order();
-        order.setKind(3);
-        order.setDescription(this.description);
-        order.setMoney(this.money);
-        order.setStatus(1);
-        order.setTime(this.getOtime());
-        order.setAid(this.getAccountId());
-        return order;
+    public HelpGetOrder(int id, String description, int accountId, int oid, String buyAddress, String getAddress, String putTime, String upTime, int money, int distance, String otime) {
+        this.id = id;
+        this.description = description;
+        this.accountId = accountId;
+        this.oid = oid;
+        this.buyAddress = buyAddress;
+        this.getAddress = getAddress;
+        this.putTime = putTime;
+        this.upTime = upTime;
+        this.money = money;
+        this.distance = distance;
+        this.otime = otime;
+    }
+
+    @Override
+    public String toString() {
+        return "HelpGetOrder{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", accountId=" + accountId +
+                ", oid=" + oid +
+                ", buyAddress='" + buyAddress + '\'' +
+                ", getAddress='" + getAddress + '\'' +
+                ", putTime='" + putTime + '\'' +
+                ", upTime='" + upTime + '\'' +
+                ", money=" + money +
+                ", distance=" + distance +
+                ", otime='" + otime + '\'' +
+                '}';
     }
 }

@@ -2,39 +2,24 @@ package com.xcy.controller;
 
 
 import com.xcy.pojo.Account;
-import com.xcy.pojo.User;
-import com.xcy.service.AccountService;
-import io.swagger.annotations.ApiOperation;
 import com.xcy.pojo.CollectionAccount;
+import com.xcy.pojo.Ticket;
 import com.xcy.service.AccountService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import sun.security.krb5.internal.Ticket;
-
-import java.util.List;
-
-
-
-
-import com.xcy.pojo.Account;
-import com.xcy.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-
+import java.util.List;
 
 @Controller
 public class AccountController {
 
-    @Autowired
+    @Resource
     AccountService accountService;
 
     @ApiOperation(value = "查询个人信息")

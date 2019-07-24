@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xcy.mapper.OrderMapper">
-    <select id="selectAllOrder" parameterType="order">
+    <select id="selectAllOrder" parameterType="com.xcy.pojo.Order">
         select * from order where phoneName = #{phoneName} and status = #{status}
     </select>
 
-    <select id="selectUnpaidOrder" parameterType="order">
+    <select id="selectUnpaidOrder" parameterType="com.xcy.pojo.Order">
         select * from order where phoneName = #{phoneName} and status = #{status}
     </select>
 
-    <select id="selectWaitOrder" parameterType="order">
+    <select id="selectWaitOrder" parameterType="com.xcy.pojo.Order">
         select * from order where phoneName = #{phoneName} and status = #{status}
     </select>
 
-    <select id="selectUnderwayOrder" parameterType="order">
+    <select id="selectUnderwayOrder" parameterType="com.xcy.pojo.Order">
         select * from order where phoneName = #{phoneName} and status = #{status}
     </select>
 
-    <select id="selectPlaceOrder" parameterType="order">
+    <select id="selectPlaceOrder" parameterType="com.xcy.pojo.Order">
         select * from order where phoneName = #{phoneName} and status = #{status}
     </select>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xcy.mapper.OrderMapper">
-    <insert id="submitHelpOrder" parameterType="helpOrder" >
+
+    <insert id="submitHelpOrder" parameterType="com.xcy.pojo.HelpOrder" >
        insert into help_order(id,description,oid,time,size,requirement,money,otime) values (null,#{description},#{oid},#{time},#{size},#{requirement},#{money},#{otime})
     </insert>
-    <insert id="submitOrder" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
+    <insert id="submitOrder" parameterType="com.xcy.pojo.Order" useGeneratedKeys="true" keyProperty="id">
        insert into orders(id,kind,description,money,status,aid,time) values (null,#{kind},#{description},#{money},#{status},#{aid},#{time})
     </insert>
     <update id="updateOrderStatus" parameterType="java.lang.Integer">
@@ -39,16 +37,16 @@
     <select id="getAccountMoney" parameterType="java.lang.Integer" resultType="int">
         select money from account where  id=#{id}
     </select>
-    <insert id="submitHelpBuyOrder" parameterType="helpBuyOrder" >
+    <insert id="submitHelpBuyOrder" parameterType="com.xcy.pojo.HelpOrder" >
        insert into buy_order(id,description,aid,oid,buyTime,buyAddress,getAddress,tickId,money,otime) values (null,#{description},#{accountId},#{oid},#{buyTime},#{buyAddress},#{getAddress},#{tickId},#{money},#{otime})
     </insert>
-    <insert id="submitHelpPutOrder" parameterType="helpPutOrder" >
+    <insert id="submitHelpPutOrder" parameterType="com.xcy.pojo.HelpOrder" >
        insert into put_order(id,description,aid,oid,putTime,buyAddress,getAddress,upTime,money,otime) values (null,#{description},#{accountId},#{oid},#{putTime},#{buyAddress},#{getAddress},#{upTime},#{money},#{otime})
     </insert>
-    <insert id="submitHelpGetOrder" parameterType="helpGetOrder" >
+    <insert id="submitHelpGetOrder" parameterType="com.xcy.pojo.HelpOrder" >
        insert into get_order(id,description,aid,oid,putTime,buyAddress,getAddress,upTime,money,otime) values (null,#{description},#{accountId},#{oid},#{putTime},#{buyAddress},#{getAddress},#{upTime},#{money},#{otime})
     </insert>
-    <insert id="submitHelLineOrder" parameterType="helpLineOrder" >
+    <insert id="submitHelLineOrder" parameterType="com.xcy.pojo.HelpOrder" >
        insert into line_order(id,description,aid,oid,address,aim,time,money,otime) values (null,#{description},#{accountId},#{oid},#{address},#{aim},#{time},#{money},#{otime})
     </insert>
     <update id="delMoney" parameterType="java.lang.Integer">

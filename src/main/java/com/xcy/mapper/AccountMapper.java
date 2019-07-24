@@ -1,13 +1,9 @@
 package com.xcy.mapper;
 
-import com.xcy.pojo.Account;
+import com.xcy.pojo.*;
 import com.xcy.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
-import com.xcy.pojo.CollectionAccount;
-import com.xcy.pojo.User;
-import org.mapstruct.Mapper;
 import org.springframework.web.bind.annotation.Mapping;
-import sun.security.krb5.internal.Ticket;
 
 import java.util.List;
 

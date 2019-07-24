@@ -31,56 +31,31 @@ public class Account implements Serializable {
     @ApiModelProperty(value ="用户等级")
     private String accountLevel;
 
-    public Account() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Account(int id, int money, int userId, String phoneNum, String headImg, String birthday, String nickName, String registerAddress, String accountLevel) {
         this.id = id;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
         this.money = money;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public String getTicketId() {
-        return ticketId;
-    }
-
-    public void setTicketId(String ticketId) {
-        this.ticketId = ticketId;
-    }
-
-    public String getHeadImg() {
-        return headImg;
-    }
-
-    public void setHeadImg(String headImg) {
+        this.phoneNum = phoneNum;
         this.headImg = headImg;
+        this.birthday = birthday;
+        this.nickName = nickName;
+        this.registerAddress = registerAddress;
+        this.accountLevel = accountLevel;
     }
-    private List<Message> messages;
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", money=" + money +
+                ", userId=" + userId +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", headImg='" + headImg + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", registerAddress='" + registerAddress + '\'' +
+                ", accountLevel='" + accountLevel + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -155,70 +130,6 @@ public class Account implements Serializable {
         this.accountLevel = accountLevel;
     }
 
-    public Account(String phoneNum, String headImg) {
-        this.phoneNum=phoneNum;
-        this.headImg=headImg;
-    }
-
-    @Override
-    public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", money=" + money +
-                ", userId=" + userId +
-                ", phoneNum='" + phoneNum + '\'' +
-                ", headImg='" + headImg + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", registerAddress='" + registerAddress + '\'' +
-                ", accountLevel='" + accountLevel + '\'' +
-                ", messages=" + messages +
-                '}';
-    }
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public String getRegisterAddress() {
-        return registerAddress;
-    }
-
-    public void setRegisterAddress(String registerAddress) {
-        this.registerAddress = registerAddress;
-    }
-
-    public String getAccountLevel() {
-        return accountLevel;
-    }
-
-    public void setAccountLevel(String accountLevel) {
-        this.accountLevel = accountLevel;
-    }
-
-    @Override
-    public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", money=" + money +
-                ", userId=" + userId +
-                ", ticketId='" + ticketId + '\'' +
-                ", headImg='" + headImg + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", registerAddress='" + registerAddress + '\'' +
-                ", accountLevel='" + accountLevel + '\'' +
-                '}';
+    public Account() {
     }
 }

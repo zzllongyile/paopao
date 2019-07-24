@@ -95,7 +95,7 @@ public class HelpLineOrder {
     }
     public Order getOrder() {
         Order order = new Order();
-        order.setKind(5);
+        order.setKind(4);
         order.setDescription(this.description);
         order.setMoney(this.money);
         order.setStatus(1);

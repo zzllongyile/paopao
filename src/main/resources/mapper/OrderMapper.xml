@@ -28,4 +28,7 @@
     <insert id="submitHelLineOrder" parameterType="helpLineOrder" >
        insert into line_order(id,description,aid,oid,address,aim,time,money,otime) values (null,#{description},#{accountId},#{oid},#{address},#{aim},#{time},#{money},#{otime})
     </insert>
+    <update id="delMoney" parameterType="java.lang.Integer">
+        update account set money=money-#{money} where id=#{aid}
+    </update>
 </mapper>

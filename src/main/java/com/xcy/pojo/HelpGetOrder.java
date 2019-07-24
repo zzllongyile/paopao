@@ -108,7 +108,7 @@ public class HelpGetOrder {
 
     public Order getOrder() {
         Order order = new Order();
-        order.setKind(5);
+        order.setKind(3);
         order.setDescription(this.description);
         order.setMoney(this.money);
         order.setStatus(1);

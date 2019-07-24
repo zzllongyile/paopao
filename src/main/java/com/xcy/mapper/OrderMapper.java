@@ -2,6 +2,7 @@ package com.xcy.mapper;
 
 import com.xcy.pojo.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface OrderMapper {
@@ -11,7 +12,7 @@ public interface OrderMapper {
 
     int updateOrderStatus(int oid, int status);//提交
 
-    int delMoney(int aid, int money);
+    int delMoney(@Param("aid") int aid,@Param("money") int money);
     int getPayMoney(int id);//获取订单金额
      int getAccountMoney(int id);//获取账户余额
 

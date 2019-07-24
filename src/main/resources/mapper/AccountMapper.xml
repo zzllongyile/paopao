@@ -38,4 +38,25 @@
         money = money + #{money}
         where id = #{id}
     </update>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xcy.mapper.AccountMapper">
+    <resultMap id="accountMap" type="account">
+        <id column="id" property="id"/>
+        <result column="headImg" property="headImg"/>
+        <result column="phoneNum" property="phoneNum"/>
+        <collection property="messages" ofType="message">
+            <id column="mid" property="id"/>
+            <result column="aid" property="accountId"/>
+            <result column="desc" property="desc"/>
+            <result column="date" property="date"/>
+        </collection>
+    </resultMap>
+    <select id="findAll" resultMap="accountMap" parameterType="int">
+        select a.*,m.id as mid,m.aid,m.desc,m.date from account a left
+        outer join message m on a.id = m.aid
+    </select>
+
 </mapper>

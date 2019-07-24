@@ -17,4 +17,21 @@ public interface AccountService {
 
     String updateAccountMoney(Account money);
 
+import com.xcy.pojo.CollectionAccount;
+import io.swagger.annotations.ApiParam;
+import sun.security.krb5.internal.Ticket;
+
+import java.util.List;
+import com.xcy.pojo.Account;
+public interface AccountService {
+
+    String updatePhoneNumById(int  id,int newPhoneNum);
+    String showPhoneNumById(int  phoneNum);
+    Boolean updatePasswordById(int phoneNum,int password);
+    String showPasswordById(int phoneNum);
+    Boolean insertCollectionAccount(int phoneNum,CollectionAccount collectionAccount);
+    List<CollectionAccount> showCollectionAccount(int phoneNum);
+    List<Ticket> selectAllCouponById(int phoneNum);
+
+    Account findAll(int id);
 }

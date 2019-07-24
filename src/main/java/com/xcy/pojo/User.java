@@ -52,4 +52,8 @@ public class User {
                 ", password=" + password +
                 '}';
     }
+    public User(int phoneNum, int password) {
+        this.phoneNum = phoneNum;
+        this.password = password;
+    }
 }

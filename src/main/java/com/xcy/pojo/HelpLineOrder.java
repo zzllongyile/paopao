@@ -94,15 +94,14 @@ public class HelpLineOrder {
         this.otime = otime;
     }
 
-    public HelpLineOrder(int id, String description, int accountId, int oid, String address, String aim, String time, int money, String otime) {
-        this.id = id;
-        this.description = description;
-        this.accountId = accountId;
-        this.oid = oid;
-        this.address = address;
-        this.aim = aim;
-        this.time = time;
-        this.money = money;
-        this.otime = otime;
+    public Order getOrder(){
+        Order order = new Order();
+        order.setKind(4);
+        order.setDescription(this.description);
+        order.setMoney(this.money);
+        order.setStatus(1);
+        order.setTime(this.getOtime());
+        order.setAid(this.getAccountId());
+        return order;
     }
 }
